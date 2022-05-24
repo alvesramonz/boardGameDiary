@@ -1,0 +1,35 @@
+
+# Board Game Diary
+
+Board Game Diary (Mock) é um projeto base para usar meu micro serviço de autenticação. Basicamente com o Board Game Diary você pode registrar seus eventos do jogo de tabuleiro com sistema, jogadores e descrição.
+
+Neste simples projeto o usuário cadastrará seus diários de jogatinas e em uma tela principal em formato de `feed` todas seus registros estarão disponíveis.
+
+
+
+
+## Rodando projeto
+
+O projeto assumes that you already have installed Python, Flask and MongoDB. You may have to make minor changes depending on how you set up MongoDB.
+
+Para avançar é necessário a utilização de uma env, acesse https://docs.python.org/pt-br/3/tutorial/venv.html para maiores informações.
+
+Prossiga com:
+```bash
+   pip install -r requirements.txt
+```
+
+Rode com:
+```bash
+   python runMock.py
+```
+
+
+## Funcionalidades
+
+- Criação de usuário;
+- Login;
+- Criação de registro de jogo (Diário);
+- Edição de registro de jogo e
+- Deleção de registro de jogo.
+

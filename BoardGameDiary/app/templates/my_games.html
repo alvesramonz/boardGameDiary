@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">My Games</h3>
+    {% for game in my_games %}
+    <div class="card" style="margin-top: 1.5rem;">
+        <div class="card-content">
+            <div class="content">
+                <p class="has-text-justified"><b>{{game.gameSystem}}</b></p>
+                <p class="has-text-justified">{{game.gameDescription}}</p>
+                <p class="has-text-justified is-size-7">{{game.createdAt}}</p>
+            </div>
+        </div>
+        <footer class="card-footer">
+            <a href="{{ url_for('main.view_edit_game', my_game_id=game.get('_id'))}}" class="card-footer-item">Edit</a>
+            <a href="{{ url_for('main.delete_my_game', my_game_id=game.get('_id'))}}" class="card-footer-item">Delete</a>
+        </footer>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

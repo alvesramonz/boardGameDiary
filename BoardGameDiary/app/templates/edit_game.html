@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Register Game</h3>
+    <div class="box">
+        <form action="{{ url_for('main.edit_my_game', my_game_id=my_game.get('_id'))}}" method="POST" class="form-horizontal" >                        
+            <!-- Text input-->
+            <div class="field">
+              <label class="label has-text-justified" for="game-system">Game System</label>
+              <div class="control">
+                <input id="game-system" value="{{my_game.gameSystem}}" name="game-system" type="text" placeholder="Dungeons and Dragons, Zombiecide" class="input " required="">
+              </div>
+            </div>
+            
+            <!-- Text input-->
+            <div class="field">
+              <label class="label has-text-justified" for="game-players">Players</label>
+              <div class="control">
+                <input id="game-players" value="{{my_game.gamePlayers}}" name="game-players" type="text" placeholder="Marcela, Felipe, Augusto e Macial" class="input " required="">
+              </div>
+            </div>
+            
+            <!-- Textarea -->
+            <div class="field">
+              <label class="label has-text-justified" for="game-description">Game Description</label>
+              <div class="control">                     
+                <textarea class="textarea" value="{{my_game.gameDescription}}" id="game-description" name="game-description"></textarea>
+              </div>
+            </div>
+            
+            <!-- Button (Double) -->
+            <div class="field">
+              <div class="control">
+                <button id="save-game" name="save-game" class="button is-success">Save it!</button>
+                <button href="{{ url_for('main.view_my_games')}}" id="cancel-game" name="cancel-game" class="button is-danger">Cancel</button>
+              </div>
+            </div>
+            
+            </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock %}
